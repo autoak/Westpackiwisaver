@@ -3,7 +3,6 @@ Documentation     Buy online journey for Yellow Products keywords
 Resource          ../helper.robot
 Library           ../util.py
 Library           ../config.py
-Variables         ../site_data.py
 Variables          test_sitedata.py
 
 
