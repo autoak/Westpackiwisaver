@@ -1,0 +1,2122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20201024 19:28:14.584" rpa="false">
+<suite id="s1" name="Tests" source="C:\Users\Y982410\PycharmProjects\test\testing1\tests.robot">
+<test id="s1-t1" name="TC_KS_001_Verify the kiwi saver portal">
+<kw name="Open browser and maximize" library="helper" type="setup">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20201024 19:28:14.976" endtime="20201024 19:28:14.976"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>120 s</arg>
+<arg>10 s</arg>
+<arg>Open browser and check</arg>
+</arguments>
+<kw name="Open browser and check" library="helper">
+<kw name="Open new browser" library="helper">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>command_executor=${command_executor}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:14.979" level="INFO">command_executor=None</msg>
+<status status="PASS" starttime="20201024 19:28:14.978" endtime="20201024 19:28:14.979"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${command_executor}' == 'None'</arg>
+<arg>Open Browser</arg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:14.981" level="INFO">Opening browser 'chrome' to base url 'https://www.westpac.co.nz'.</msg>
+<status status="PASS" starttime="20201024 19:28:14.980" endtime="20201024 19:28:20.184"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:14.979" endtime="20201024 19:28:20.184"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${command_executor}' == 'None'</arg>
+<arg>Open Browser</arg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+<arg>remote_url=${command_executor}</arg>
+<arg>desired_capabilities=${desired_capabilities}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:20.184" endtime="20201024 19:28:20.185"></status>
+</kw>
+<timeout value="2 minutes"></timeout>
+<status status="PASS" starttime="20201024 19:28:14.977" endtime="20201024 19:28:20.185"></status>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${TEST_URL}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:20.192" level="INFO">Current location contains 'https://www.westpac.co.nz'.</msg>
+<status status="PASS" starttime="20201024 19:28:20.185" endtime="20201024 19:28:20.192"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:14.977" endtime="20201024 19:28:20.192"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:14.976" endtime="20201024 19:28:20.192"></status>
+</kw>
+<kw name="Wait For Page To Load" library="helper">
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return window.document.readyState == "complete"</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:20.193" endtime="20201024 19:28:20.197"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${pagetitle}</var>
+</assign>
+<msg timestamp="20201024 19:28:20.204" level="INFO">${pagetitle} = Bank | Westpac New Zealand - Helping Kiwis with their personal banking</msg>
+<status status="PASS" starttime="20201024 19:28:20.197" endtime="20201024 19:28:20.204"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:20.192" endtime="20201024 19:28:20.205"></status>
+</kw>
+<kw name="Cancel chrome browser upgrade popup" library="helper">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>4x</arg>
+<arg>2s</arg>
+<arg>Click Element If It Exists</arg>
+<arg>css=#buorgig</arg>
+</arguments>
+<kw name="Click Element If It Exists" library="helper">
+<arguments>
+<arg>css=#buorgig</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201024 19:28:20.556" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201024 19:28:20.217" endtime="20201024 19:28:20.557"></status>
+</kw>
+<msg timestamp="20201024 19:28:20.559" level="FAIL">Element with locator 'css=#buorgig' not found.</msg>
+<status status="FAIL" starttime="20201024 19:28:20.206" endtime="20201024 19:28:20.560"></status>
+</kw>
+<msg timestamp="20201024 19:28:20.560" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20201024 19:28:20.206" endtime="20201024 19:28:20.560"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'True'</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:20.560" endtime="20201024 19:28:20.561"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:20.205" endtime="20201024 19:28:20.561"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:20.205" endtime="20201024 19:28:20.561"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:20.205" endtime="20201024 19:28:20.561"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201024 19:28:20.562" endtime="20201024 19:28:21.698"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:14.975" endtime="20201024 19:28:21.698"></status>
+</kw>
+<kw name="Given User go to the kiwisaver scheme retirement calculator" library="test_keywords">
+<kw name="Go To Url And Wait For Element" library="helper">
+<arguments>
+<arg>${TEST_URL}${kiwi_saver_cal}</arg>
+<arg>${get_started_button}</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:21.702" level="INFO">Opening url 'https://www.westpac.co.nz/kiwisaver/calculators/'</msg>
+<status status="PASS" starttime="20201024 19:28:21.702" endtime="20201024 19:28:23.124"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.documentElement.scrollTop=0</arg>
+</arguments>
+<msg timestamp="20201024 19:28:23.126" level="INFO">Executing JavaScript:
+document.documentElement.scrollTop=0
+Without any arguments.</msg>
+<status status="PASS" starttime="20201024 19:28:23.125" endtime="20201024 19:28:23.134"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:23.135" endtime="20201024 19:28:23.164"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:23.134" endtime="20201024 19:28:23.164"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:21.701" endtime="20201024 19:28:23.164"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:21.700" endtime="20201024 19:28:23.164"></status>
+</kw>
+<kw name="When User clicks the get started button" library="test_keywords">
+<kw name="Click Element And Wait For Another Element" library="helper">
+<arguments>
+<arg>${get_started_button}</arg>
+<arg>${kiwi_save_retirement_cal}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>240</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:23.165" endtime="20201024 19:28:23.167"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element1}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:23.168" endtime="20201024 19:28:23.182"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:23.167" endtime="20201024 19:28:23.182"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:23.183" level="INFO">Clicking element 'xpath=//a[contains(text(),'Click here to get started.')]'.</msg>
+<status status="PASS" starttime="20201024 19:28:23.182" endtime="20201024 19:28:25.350"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element2}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element2}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:25.351" endtime="20201024 19:28:25.388"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.350" endtime="20201024 19:28:25.388"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:23.165" endtime="20201024 19:28:25.389"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:23.164" endtime="20201024 19:28:25.389"></status>
+</kw>
+<kw name="Then User verifies the information icons" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:25.392" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:28:25.392" endtime="20201024 19:28:25.434"></status>
+</kw>
+<kw name="Verify page contain element:" library="helper">
+<arguments>
+<arg>${kiwi_saver_current_age}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${element_name}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:25.445" level="INFO">Current page contains element 'xpath=//div[contains(@help-id,'CurrentAge')]/button/i'.</msg>
+<status status="PASS" starttime="20201024 19:28:25.435" endtime="20201024 19:28:25.445"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.434" endtime="20201024 19:28:25.445"></status>
+</kw>
+<kw name="Verify page contain element:" library="helper">
+<arguments>
+<arg>${kiwi_saver_employment_status}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${element_name}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:25.460" level="INFO">Current page contains element 'xpath=//div[contains(@help-id,'EmploymentStatus')]/button/i'.</msg>
+<status status="PASS" starttime="20201024 19:28:25.446" endtime="20201024 19:28:25.460"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.446" endtime="20201024 19:28:25.460"></status>
+</kw>
+<kw name="Verify page contain element:" library="helper">
+<arguments>
+<arg>${kiwi_saver_current_balance}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${element_name}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:25.473" level="INFO">Current page contains element 'xpath=//div[contains(@help-id,'KiwiSaverBalance')]/button/i'.</msg>
+<status status="PASS" starttime="20201024 19:28:25.461" endtime="20201024 19:28:25.473"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.460" endtime="20201024 19:28:25.473"></status>
+</kw>
+<kw name="Verify page contain element:" library="helper">
+<arguments>
+<arg>${kiwi_saver_vol_contribution}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${element_name}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:25.484" level="INFO">Current page contains element 'xpath=//div[contains(@help-id,'VoluntaryContributions')]/button/i'.</msg>
+<status status="PASS" starttime="20201024 19:28:25.474" endtime="20201024 19:28:25.485"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.473" endtime="20201024 19:28:25.485"></status>
+</kw>
+<kw name="Verify page contain element:" library="helper">
+<arguments>
+<arg>${kiwi_saver_Risk_Profile}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${element_name}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:25.501" level="INFO">Current page contains element 'xpath=//div[contains(@help-id,'RiskProfile')]/button/i'.</msg>
+<status status="PASS" starttime="20201024 19:28:25.486" endtime="20201024 19:28:25.502"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.485" endtime="20201024 19:28:25.502"></status>
+</kw>
+<kw name="Verify page contain element:" library="helper">
+<arguments>
+<arg>${kiwi_saver_Savings_Goal}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${element_name}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:25.519" level="INFO">Current page contains element 'xpath=//div[contains(@help-id,'SavingsGoal')]/button/i'.</msg>
+<status status="PASS" starttime="20201024 19:28:25.503" endtime="20201024 19:28:25.519"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.502" endtime="20201024 19:28:25.519"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:28:25.519" endtime="20201024 19:28:25.521"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.391" endtime="20201024 19:28:25.522"></status>
+</kw>
+<kw name="And User clicks information icon besides Current age the message" library="test_keywords">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:28:27.524" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:28:25.523" endtime="20201024 19:28:27.524"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:27.524" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:28:27.524" endtime="20201024 19:28:27.543"></status>
+</kw>
+<kw name="Click Element And Wait For Another Element" library="helper">
+<arguments>
+<arg>${kiwi_saver_current_age}</arg>
+<arg>${kiwi_saver_age_calculator_msg}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>240</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:27.544" endtime="20201024 19:28:27.546"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element1}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:27.546" endtime="20201024 19:28:27.575"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:27.546" endtime="20201024 19:28:27.575"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:27.576" level="INFO">Clicking element 'xpath=//div[contains(@help-id,'CurrentAge')]/button/i'.</msg>
+<status status="PASS" starttime="20201024 19:28:27.575" endtime="20201024 19:28:27.688"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element2}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element2}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:27.689" endtime="20201024 19:28:27.746"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:27.688" endtime="20201024 19:28:27.746"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:27.544" endtime="20201024 19:28:27.746"></status>
+</kw>
+<kw name="Verify page element text:" library="helper">
+<arguments>
+<arg>${kiwi_saver_age_calculator_msg}</arg>
+<arg>This calculator has an age limit of 18 to 64 years old</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${element_name}</arg>
+</arguments>
+<assign>
+<var>${element_text_actual}</var>
+</assign>
+<msg timestamp="20201024 19:28:27.774" level="INFO">${element_text_actual} = This calculator has an age limit of 18 to 64 years old.</msg>
+<status status="PASS" starttime="20201024 19:28:27.747" endtime="20201024 19:28:27.774"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${element_text_actual}</arg>
+<arg>${element_text}</arg>
+<arg>[ERROR] Text value for element ${element_name} is "${element_text_actual}" - SHOULD BE "${element_text}"</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:27.775" endtime="20201024 19:28:27.775"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:27.746" endtime="20201024 19:28:27.776"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:28:27.776" endtime="20201024 19:28:27.779"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:25.522" endtime="20201024 19:28:27.779"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201024 19:28:27.781" endtime="20201024 19:28:31.198"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:27.780" endtime="20201024 19:28:31.198"></status>
+</kw>
+<tags>
+<tag>codebuild_ready</tag>
+<tag>TC_kiwi_saver_001</tag>
+</tags>
+<status status="PASS" starttime="20201024 19:28:14.975" endtime="20201024 19:28:31.198" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TC_KS_002_kiwi saver retirement calculator for user who has age as 30">
+<kw name="Open browser and maximize" library="helper" type="setup">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20201024 19:28:31.201" endtime="20201024 19:28:31.201"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>120 s</arg>
+<arg>10 s</arg>
+<arg>Open browser and check</arg>
+</arguments>
+<kw name="Open browser and check" library="helper">
+<kw name="Open new browser" library="helper">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>command_executor=${command_executor}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:31.203" level="INFO">command_executor=None</msg>
+<status status="PASS" starttime="20201024 19:28:31.202" endtime="20201024 19:28:31.203"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${command_executor}' == 'None'</arg>
+<arg>Open Browser</arg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:31.204" level="INFO">Opening browser 'chrome' to base url 'https://www.westpac.co.nz'.</msg>
+<status status="PASS" starttime="20201024 19:28:31.203" endtime="20201024 19:28:37.598"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:31.203" endtime="20201024 19:28:37.598"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${command_executor}' == 'None'</arg>
+<arg>Open Browser</arg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+<arg>remote_url=${command_executor}</arg>
+<arg>desired_capabilities=${desired_capabilities}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:37.598" endtime="20201024 19:28:37.599"></status>
+</kw>
+<timeout value="2 minutes"></timeout>
+<status status="PASS" starttime="20201024 19:28:31.202" endtime="20201024 19:28:37.599"></status>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${TEST_URL}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:37.603" level="INFO">Current location contains 'https://www.westpac.co.nz'.</msg>
+<status status="PASS" starttime="20201024 19:28:37.599" endtime="20201024 19:28:37.603"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:31.201" endtime="20201024 19:28:37.603"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:31.201" endtime="20201024 19:28:37.604"></status>
+</kw>
+<kw name="Wait For Page To Load" library="helper">
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return window.document.readyState == "complete"</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:37.604" endtime="20201024 19:28:37.608"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${pagetitle}</var>
+</assign>
+<msg timestamp="20201024 19:28:37.613" level="INFO">${pagetitle} = Bank | Westpac New Zealand - Helping Kiwis with their personal banking</msg>
+<status status="PASS" starttime="20201024 19:28:37.608" endtime="20201024 19:28:37.614"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:37.604" endtime="20201024 19:28:37.614"></status>
+</kw>
+<kw name="Cancel chrome browser upgrade popup" library="helper">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>4x</arg>
+<arg>2s</arg>
+<arg>Click Element If It Exists</arg>
+<arg>css=#buorgig</arg>
+</arguments>
+<kw name="Click Element If It Exists" library="helper">
+<arguments>
+<arg>css=#buorgig</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201024 19:28:37.987" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201024 19:28:37.630" endtime="20201024 19:28:37.988"></status>
+</kw>
+<msg timestamp="20201024 19:28:37.988" level="FAIL">Element with locator 'css=#buorgig' not found.</msg>
+<status status="FAIL" starttime="20201024 19:28:37.615" endtime="20201024 19:28:37.988"></status>
+</kw>
+<msg timestamp="20201024 19:28:37.988" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20201024 19:28:37.615" endtime="20201024 19:28:37.988"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'True'</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:37.989" endtime="20201024 19:28:37.989"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:37.614" endtime="20201024 19:28:37.989"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:37.614" endtime="20201024 19:28:37.989"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:37.614" endtime="20201024 19:28:37.989"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201024 19:28:37.989" endtime="20201024 19:28:39.144"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:31.200" endtime="20201024 19:28:39.144"></status>
+</kw>
+<kw name="Given User go to the kiwisaver scheme retirement calculator" library="test_keywords">
+<kw name="Go To Url And Wait For Element" library="helper">
+<arguments>
+<arg>${TEST_URL}${kiwi_saver_cal}</arg>
+<arg>${get_started_button}</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:39.150" level="INFO">Opening url 'https://www.westpac.co.nz/kiwisaver/calculators/'</msg>
+<status status="PASS" starttime="20201024 19:28:39.150" endtime="20201024 19:28:40.811"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.documentElement.scrollTop=0</arg>
+</arguments>
+<msg timestamp="20201024 19:28:40.813" level="INFO">Executing JavaScript:
+document.documentElement.scrollTop=0
+Without any arguments.</msg>
+<status status="PASS" starttime="20201024 19:28:40.812" endtime="20201024 19:28:40.818"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:40.819" endtime="20201024 19:28:40.848"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:40.819" endtime="20201024 19:28:40.848"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:39.148" endtime="20201024 19:28:40.848"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:39.148" endtime="20201024 19:28:40.848"></status>
+</kw>
+<kw name="When User clicks the get started button" library="test_keywords">
+<kw name="Click Element And Wait For Another Element" library="helper">
+<arguments>
+<arg>${get_started_button}</arg>
+<arg>${kiwi_save_retirement_cal}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>240</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:40.850" endtime="20201024 19:28:40.852"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element1}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:40.852" endtime="20201024 19:28:40.867"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:40.852" endtime="20201024 19:28:40.867"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:40.868" level="INFO">Clicking element 'xpath=//a[contains(text(),'Click here to get started.')]'.</msg>
+<status status="PASS" starttime="20201024 19:28:40.868" endtime="20201024 19:28:43.281"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element2}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element2}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:43.283" endtime="20201024 19:28:43.336"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:43.282" endtime="20201024 19:28:43.336"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:40.849" endtime="20201024 19:28:43.336"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:40.849" endtime="20201024 19:28:43.336"></status>
+</kw>
+<kw name="And User enters the current age as 30" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:43.338" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:28:43.338" endtime="20201024 19:28:43.382"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${current_age_input}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:43.383" level="INFO">Typing text '30' into text field 'xpath=//div[1][contains(@model,'CurrentAge')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:28:43.383" endtime="20201024 19:28:43.509"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:28:43.509" endtime="20201024 19:28:43.512"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:28:45.514" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:28:43.512" endtime="20201024 19:28:45.514"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:43.337" endtime="20201024 19:28:45.514"></status>
+</kw>
+<kw name="And User is employed" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:45.516" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:28:45.515" endtime="20201024 19:28:45.531"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${employment_status_input}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:45.532" level="INFO">Clicking element 'xpath=//div[contains(@selected-content,'EmploymentStatus')]/div/div[contains(@class,'control-well')]'.</msg>
+<status status="PASS" starttime="20201024 19:28:45.532" endtime="20201024 19:28:45.693"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'employed'</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_employed}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Status}' == 'self-employed'</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_self_employed}</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_not_employed}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${employment_status_employed}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:45.695" level="INFO">Clicking element 'xpath=//ul/li[2]/div/span'.</msg>
+<status status="PASS" starttime="20201024 19:28:45.694" endtime="20201024 19:28:45.921"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:45.693" endtime="20201024 19:28:45.921"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:28:45.921" endtime="20201024 19:28:45.934"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:28:47.937" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:28:45.935" endtime="20201024 19:28:47.937"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:45.515" endtime="20201024 19:28:47.937"></status>
+</kw>
+<kw name="And User has salary 82000 p/a" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:47.938" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:28:47.938" endtime="20201024 19:28:47.954"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${salary_wage_per_year_input}</arg>
+<arg>${amount}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:47.955" level="INFO">Typing text '82000' into text field 'xpath=//div[1][contains(@model,'AnnualIncome')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:28:47.955" endtime="20201024 19:28:48.073"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:28:48.073" endtime="20201024 19:28:48.077"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:28:50.079" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:28:48.077" endtime="20201024 19:28:50.079"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:47.937" endtime="20201024 19:28:50.079"></status>
+</kw>
+<kw name="And User contribution for kiwisaver is 4%" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:50.081" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:28:50.080" endtime="20201024 19:28:50.097"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${kiwi_saver_member_contibution}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:50.098" level="INFO">Clicking element 'xpath=//span/input[contains(@id,'radio-option-04F')]'.</msg>
+<status status="PASS" starttime="20201024 19:28:50.097" endtime="20201024 19:28:50.206"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:28:50.207" endtime="20201024 19:28:50.219"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:28:52.221" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:28:50.220" endtime="20201024 19:28:52.221"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:50.080" endtime="20201024 19:28:52.221"></status>
+</kw>
+<kw name="And User selects risk profile as defensive" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:52.222" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:28:52.222" endtime="20201024 19:28:52.245"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${risk_profile}' == 'defensive'</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_defensive}</arg>
+<arg>ELSE IF</arg>
+<arg>'${risk_profile}' == 'conservative'</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_conservative}</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_balanced}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${risk_profile_defensive}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:52.246" level="INFO">Clicking element 'xpath=//input[contains(@Id,'radio-option-013')]'.</msg>
+<status status="PASS" starttime="20201024 19:28:52.246" endtime="20201024 19:28:52.330"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:52.245" endtime="20201024 19:28:52.330"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:28:52.330" endtime="20201024 19:28:52.359"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:52.222" endtime="20201024 19:28:52.359"></status>
+</kw>
+<kw name="Then User clicks the retirement projection button" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:52.360" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:28:52.360" endtime="20201024 19:28:52.384"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${retierment_projection_button}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:28:52.384" endtime="20201024 19:28:52.413"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${retierment_projection_button}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:52.414" level="INFO">Clicking element 'xpath=//button/span[contains(text(),'View your KiwiSaver retirement projections')]'.</msg>
+<status status="PASS" starttime="20201024 19:28:52.414" endtime="20201024 19:28:52.568"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:28:52.568" endtime="20201024 19:28:52.662"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:52.360" endtime="20201024 19:28:52.662"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201024 19:28:52.663" endtime="20201024 19:28:55.017"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:52.663" endtime="20201024 19:28:55.017"></status>
+</kw>
+<tags>
+<tag>codebuild_ready</tag>
+<tag>TC_kiwi_saver_002</tag>
+</tags>
+<status status="PASS" starttime="20201024 19:28:31.200" endtime="20201024 19:28:55.017" critical="yes"></status>
+</test>
+<test id="s1-t3" name="TC_KS_003_kiwi saver retirement calculator for user who has age as 45">
+<kw name="Open browser and maximize" library="helper" type="setup">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20201024 19:28:55.020" endtime="20201024 19:28:55.020"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>120 s</arg>
+<arg>10 s</arg>
+<arg>Open browser and check</arg>
+</arguments>
+<kw name="Open browser and check" library="helper">
+<kw name="Open new browser" library="helper">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>command_executor=${command_executor}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:55.021" level="INFO">command_executor=None</msg>
+<status status="PASS" starttime="20201024 19:28:55.021" endtime="20201024 19:28:55.021"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${command_executor}' == 'None'</arg>
+<arg>Open Browser</arg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<msg timestamp="20201024 19:28:55.023" level="INFO">Opening browser 'chrome' to base url 'https://www.westpac.co.nz'.</msg>
+<status status="PASS" starttime="20201024 19:28:55.022" endtime="20201024 19:29:01.129"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:55.022" endtime="20201024 19:29:01.130"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${command_executor}' == 'None'</arg>
+<arg>Open Browser</arg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+<arg>remote_url=${command_executor}</arg>
+<arg>desired_capabilities=${desired_capabilities}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:01.131" endtime="20201024 19:29:01.132"></status>
+</kw>
+<timeout value="2 minutes"></timeout>
+<status status="PASS" starttime="20201024 19:28:55.020" endtime="20201024 19:29:01.132"></status>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${TEST_URL}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:01.138" level="INFO">Current location contains 'https://www.westpac.co.nz'.</msg>
+<status status="PASS" starttime="20201024 19:29:01.132" endtime="20201024 19:29:01.139"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:55.020" endtime="20201024 19:29:01.139"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:55.020" endtime="20201024 19:29:01.139"></status>
+</kw>
+<kw name="Wait For Page To Load" library="helper">
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return window.document.readyState == "complete"</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:01.140" endtime="20201024 19:29:01.146"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${pagetitle}</var>
+</assign>
+<msg timestamp="20201024 19:29:01.151" level="INFO">${pagetitle} = Bank | Westpac New Zealand - Helping Kiwis with their personal banking</msg>
+<status status="PASS" starttime="20201024 19:29:01.146" endtime="20201024 19:29:01.151"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:01.140" endtime="20201024 19:29:01.151"></status>
+</kw>
+<kw name="Cancel chrome browser upgrade popup" library="helper">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>4x</arg>
+<arg>2s</arg>
+<arg>Click Element If It Exists</arg>
+<arg>css=#buorgig</arg>
+</arguments>
+<kw name="Click Element If It Exists" library="helper">
+<arguments>
+<arg>css=#buorgig</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201024 19:29:01.513" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201024 19:29:01.168" endtime="20201024 19:29:01.513"></status>
+</kw>
+<msg timestamp="20201024 19:29:01.514" level="FAIL">Element with locator 'css=#buorgig' not found.</msg>
+<status status="FAIL" starttime="20201024 19:29:01.152" endtime="20201024 19:29:01.514"></status>
+</kw>
+<msg timestamp="20201024 19:29:01.514" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20201024 19:29:01.152" endtime="20201024 19:29:01.514"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'True'</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:01.515" endtime="20201024 19:29:01.515"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:01.152" endtime="20201024 19:29:01.515"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:01.151" endtime="20201024 19:29:01.515"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:01.151" endtime="20201024 19:29:01.515"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201024 19:29:01.516" endtime="20201024 19:29:02.642"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:28:55.019" endtime="20201024 19:29:02.642"></status>
+</kw>
+<kw name="Given User go to the kiwisaver scheme retirement calculator" library="test_keywords">
+<kw name="Go To Url And Wait For Element" library="helper">
+<arguments>
+<arg>${TEST_URL}${kiwi_saver_cal}</arg>
+<arg>${get_started_button}</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:02.645" level="INFO">Opening url 'https://www.westpac.co.nz/kiwisaver/calculators/'</msg>
+<status status="PASS" starttime="20201024 19:29:02.644" endtime="20201024 19:29:04.191"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.documentElement.scrollTop=0</arg>
+</arguments>
+<msg timestamp="20201024 19:29:04.194" level="INFO">Executing JavaScript:
+document.documentElement.scrollTop=0
+Without any arguments.</msg>
+<status status="PASS" starttime="20201024 19:29:04.192" endtime="20201024 19:29:04.202"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:04.203" endtime="20201024 19:29:04.231"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:04.202" endtime="20201024 19:29:04.231"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:02.644" endtime="20201024 19:29:04.231"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:02.643" endtime="20201024 19:29:04.231"></status>
+</kw>
+<kw name="When User clicks the get started button" library="test_keywords">
+<kw name="Click Element And Wait For Another Element" library="helper">
+<arguments>
+<arg>${get_started_button}</arg>
+<arg>${kiwi_save_retirement_cal}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>240</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:04.233" endtime="20201024 19:29:04.235"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element1}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:04.236" endtime="20201024 19:29:04.254"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:04.235" endtime="20201024 19:29:04.254"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:04.256" level="INFO">Clicking element 'xpath=//a[contains(text(),'Click here to get started.')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:04.256" endtime="20201024 19:29:06.540"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element2}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element2}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:06.541" endtime="20201024 19:29:06.586"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:06.540" endtime="20201024 19:29:06.586"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:04.233" endtime="20201024 19:29:06.586"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:04.232" endtime="20201024 19:29:06.586"></status>
+</kw>
+<kw name="And User enters the current age as 45" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:06.588" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:06.587" endtime="20201024 19:29:06.629"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${current_age_input}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:06.630" level="INFO">Typing text '45' into text field 'xpath=//div[1][contains(@model,'CurrentAge')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:29:06.630" endtime="20201024 19:29:06.721"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:06.721" endtime="20201024 19:29:06.724"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:29:08.727" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:29:06.725" endtime="20201024 19:29:08.727"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:06.587" endtime="20201024 19:29:08.727"></status>
+</kw>
+<kw name="And User is self-employed" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:08.729" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:08.728" endtime="20201024 19:29:08.747"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${employment_status_input}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:08.748" level="INFO">Clicking element 'xpath=//div[contains(@selected-content,'EmploymentStatus')]/div/div[contains(@class,'control-well')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:08.748" endtime="20201024 19:29:08.951"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'employed'</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_employed}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Status}' == 'self-employed'</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_self_employed}</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_not_employed}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${employment_status_self_employed}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:08.953" level="INFO">Clicking element 'xpath=//ul/li[3]/div/span'.</msg>
+<status status="PASS" starttime="20201024 19:29:08.952" endtime="20201024 19:29:09.170"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:08.951" endtime="20201024 19:29:09.171"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:09.171" endtime="20201024 19:29:09.191"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.193" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:29:09.191" endtime="20201024 19:29:11.193"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:08.728" endtime="20201024 19:29:11.193"></status>
+</kw>
+<kw name="And User has current kiwisaver balance as $100000" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.195" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.194" endtime="20201024 19:29:11.212"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${kiwi_saver_balance_input}</arg>
+<arg>${total_balance}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.212" level="INFO">Typing text '100000' into text field 'xpath=//div[1][contains(@model,'KiwiSaverBalance')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.212" endtime="20201024 19:29:11.339"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:11.340" endtime="20201024 19:29:11.343"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:11.194" endtime="20201024 19:29:11.343"></status>
+</kw>
+<kw name="And User has voluntary contributes of $090 per fortnightly" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.345" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.344" endtime="20201024 19:29:11.362"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${voluntary_contribution}</arg>
+<arg>${contribution}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.363" level="INFO">Typing text '090' into text field 'xpath=//div[1][contains(@model,'VoluntaryContributions')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.363" endtime="20201024 19:29:11.469"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${frequecy_for_contibution}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.469" level="INFO">Clicking element 'xpath=//div[contains(@class,'well-value ng-binding')]/span[contains(text(),'Frequency')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.469" endtime="20201024 19:29:11.631"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${frequency}' == 'fortnightly'</arg>
+<arg>Click Element</arg>
+<arg>${frequecy_for_fortnightly}</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${frequecy_for_annually}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${frequecy_for_fortnightly}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.633" level="INFO">Clicking element 'xpath=//div/span[contains(text(),'Fortnightly')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.632" endtime="20201024 19:29:11.760"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:11.631" endtime="20201024 19:29:11.760"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:11.760" endtime="20201024 19:29:11.770"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:11.344" endtime="20201024 19:29:11.771"></status>
+</kw>
+<kw name="And User selects risk profile as conservative" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.772" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.772" endtime="20201024 19:29:11.805"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${risk_profile}' == 'defensive'</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_defensive}</arg>
+<arg>ELSE IF</arg>
+<arg>'${risk_profile}' == 'conservative'</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_conservative}</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_balanced}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${risk_profile_conservative}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.806" level="INFO">Clicking element 'xpath=//input[contains(@Id,'radio-option-016')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.806" endtime="20201024 19:29:11.928"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:11.805" endtime="20201024 19:29:11.928"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:11.928" endtime="20201024 19:29:11.948"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:11.771" endtime="20201024 19:29:11.948"></status>
+</kw>
+<kw name="And User has a saving goal of $290000" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.949" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.949" endtime="20201024 19:29:11.966"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Saving_goal_at_retirement}</arg>
+<arg>${saving_amount}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:11.967" level="INFO">Typing text '290000' into text field 'xpath=//div[1][contains(@model,'SavingsGoal')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:29:11.966" endtime="20201024 19:29:12.116"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:12.116" endtime="20201024 19:29:12.119"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:11.949" endtime="20201024 19:29:12.119"></status>
+</kw>
+<kw name="Then User clicks the retirement projection button" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:12.121" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:12.120" endtime="20201024 19:29:12.142"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${retierment_projection_button}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:12.142" endtime="20201024 19:29:12.170"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${retierment_projection_button}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:12.170" level="INFO">Clicking element 'xpath=//button/span[contains(text(),'View your KiwiSaver retirement projections')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:12.170" endtime="20201024 19:29:12.290"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:12.290" endtime="20201024 19:29:12.360"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:12.120" endtime="20201024 19:29:12.360"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201024 19:29:12.362" endtime="20201024 19:29:14.710"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:12.361" endtime="20201024 19:29:14.710"></status>
+</kw>
+<tags>
+<tag>codebuild_ready</tag>
+<tag>TC_kiwi_saver_003</tag>
+</tags>
+<status status="PASS" starttime="20201024 19:28:55.018" endtime="20201024 19:29:14.710" critical="yes"></status>
+</test>
+<test id="s1-t4" name="TC_KS_004_kiwi saver retirement calculator for user who has age as 55">
+<kw name="Open browser and maximize" library="helper" type="setup">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20201024 19:29:14.712" endtime="20201024 19:29:14.713"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>120 s</arg>
+<arg>10 s</arg>
+<arg>Open browser and check</arg>
+</arguments>
+<kw name="Open browser and check" library="helper">
+<kw name="Open new browser" library="helper">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>command_executor=${command_executor}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:14.714" level="INFO">command_executor=None</msg>
+<status status="PASS" starttime="20201024 19:29:14.714" endtime="20201024 19:29:14.714"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${command_executor}' == 'None'</arg>
+<arg>Open Browser</arg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:14.716" level="INFO">Opening browser 'chrome' to base url 'https://www.westpac.co.nz'.</msg>
+<status status="PASS" starttime="20201024 19:29:14.715" endtime="20201024 19:29:19.177"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:14.715" endtime="20201024 19:29:19.178"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>'${command_executor}' == 'None'</arg>
+<arg>Open Browser</arg>
+<arg>${TEST_URL}</arg>
+<arg>browser=${browser}</arg>
+<arg>remote_url=${command_executor}</arg>
+<arg>desired_capabilities=${desired_capabilities}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:19.179" endtime="20201024 19:29:19.179"></status>
+</kw>
+<timeout value="2 minutes"></timeout>
+<status status="PASS" starttime="20201024 19:29:14.713" endtime="20201024 19:29:19.180"></status>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${TEST_URL}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:19.190" level="INFO">Current location contains 'https://www.westpac.co.nz'.</msg>
+<status status="PASS" starttime="20201024 19:29:19.180" endtime="20201024 19:29:19.190"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:14.713" endtime="20201024 19:29:19.190"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:14.713" endtime="20201024 19:29:19.190"></status>
+</kw>
+<kw name="Wait For Page To Load" library="helper">
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return window.document.readyState == "complete"</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:19.192" endtime="20201024 19:29:19.197"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${pagetitle}</var>
+</assign>
+<msg timestamp="20201024 19:29:19.203" level="INFO">${pagetitle} = Bank | Westpac New Zealand - Helping Kiwis with their personal banking</msg>
+<status status="PASS" starttime="20201024 19:29:19.198" endtime="20201024 19:29:19.203"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:19.191" endtime="20201024 19:29:19.204"></status>
+</kw>
+<kw name="Cancel chrome browser upgrade popup" library="helper">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>4x</arg>
+<arg>2s</arg>
+<arg>Click Element If It Exists</arg>
+<arg>css=#buorgig</arg>
+</arguments>
+<kw name="Click Element If It Exists" library="helper">
+<arguments>
+<arg>css=#buorgig</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${locator}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201024 19:29:19.538" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201024 19:29:19.218" endtime="20201024 19:29:19.538"></status>
+</kw>
+<msg timestamp="20201024 19:29:19.539" level="FAIL">Element with locator 'css=#buorgig' not found.</msg>
+<status status="FAIL" starttime="20201024 19:29:19.207" endtime="20201024 19:29:19.539"></status>
+</kw>
+<msg timestamp="20201024 19:29:19.539" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20201024 19:29:19.206" endtime="20201024 19:29:19.539"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'True'</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:19.540" endtime="20201024 19:29:19.540"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:19.205" endtime="20201024 19:29:19.540"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:19.205" endtime="20201024 19:29:19.540"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:19.204" endtime="20201024 19:29:19.540"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201024 19:29:19.540" endtime="20201024 19:29:20.669"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:14.712" endtime="20201024 19:29:20.669"></status>
+</kw>
+<kw name="Given User go to the kiwisaver scheme retirement calculator" library="test_keywords">
+<kw name="Go To Url And Wait For Element" library="helper">
+<arguments>
+<arg>${TEST_URL}${kiwi_saver_cal}</arg>
+<arg>${get_started_button}</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:20.672" level="INFO">Opening url 'https://www.westpac.co.nz/kiwisaver/calculators/'</msg>
+<status status="PASS" starttime="20201024 19:29:20.672" endtime="20201024 19:29:22.585"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.documentElement.scrollTop=0</arg>
+</arguments>
+<msg timestamp="20201024 19:29:22.586" level="INFO">Executing JavaScript:
+document.documentElement.scrollTop=0
+Without any arguments.</msg>
+<status status="PASS" starttime="20201024 19:29:22.585" endtime="20201024 19:29:22.603"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:22.604" endtime="20201024 19:29:22.633"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:22.603" endtime="20201024 19:29:22.633"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:20.671" endtime="20201024 19:29:22.633"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:20.670" endtime="20201024 19:29:22.633"></status>
+</kw>
+<kw name="When User clicks the get started button" library="test_keywords">
+<kw name="Click Element And Wait For Another Element" library="helper">
+<arguments>
+<arg>${get_started_button}</arg>
+<arg>${kiwi_save_retirement_cal}</arg>
+</arguments>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>240</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:22.635" endtime="20201024 19:29:22.637"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element1}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:22.638" endtime="20201024 19:29:22.655"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:22.637" endtime="20201024 19:29:22.655"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${element1}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:22.656" level="INFO">Clicking element 'xpath=//a[contains(text(),'Click here to get started.')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:22.655" endtime="20201024 19:29:24.990"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>${timeout}</arg>
+<arg>${polltime}</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element2}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element2}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:24.991" endtime="20201024 19:29:25.026"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:24.990" endtime="20201024 19:29:25.026"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:22.634" endtime="20201024 19:29:25.026"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:22.634" endtime="20201024 19:29:25.027"></status>
+</kw>
+<kw name="And User enters the current age as 55" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:25.028" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:25.028" endtime="20201024 19:29:25.075"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${current_age_input}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:25.076" level="INFO">Typing text '55' into text field 'xpath=//div[1][contains(@model,'CurrentAge')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:29:25.075" endtime="20201024 19:29:25.177"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:25.177" endtime="20201024 19:29:25.180"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:29:27.181" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:29:25.180" endtime="20201024 19:29:27.181"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:25.027" endtime="20201024 19:29:27.181"></status>
+</kw>
+<kw name="And User is not-employed" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:27.183" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:27.182" endtime="20201024 19:29:27.202"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${employment_status_input}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:27.203" level="INFO">Clicking element 'xpath=//div[contains(@selected-content,'EmploymentStatus')]/div/div[contains(@class,'control-well')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:27.202" endtime="20201024 19:29:27.405"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'employed'</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_employed}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Status}' == 'self-employed'</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_self_employed}</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${employment_status_not_employed}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${employment_status_not_employed}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:27.407" level="INFO">Clicking element 'xpath=//ul/li[4]/div/span'.</msg>
+<status status="PASS" starttime="20201024 19:29:27.407" endtime="20201024 19:29:27.573"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:27.406" endtime="20201024 19:29:27.573"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:27.573" endtime="20201024 19:29:27.592"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201024 19:29:29.594" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201024 19:29:27.592" endtime="20201024 19:29:29.594"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:27.182" endtime="20201024 19:29:29.594"></status>
+</kw>
+<kw name="And User has current kiwisaver balance as $140000" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:29.595" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:29.595" endtime="20201024 19:29:29.612"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${kiwi_saver_balance_input}</arg>
+<arg>${total_balance}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:29.613" level="INFO">Typing text '140000' into text field 'xpath=//div[1][contains(@model,'KiwiSaverBalance')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:29:29.613" endtime="20201024 19:29:29.737"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:29.737" endtime="20201024 19:29:29.739"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:29.594" endtime="20201024 19:29:29.740"></status>
+</kw>
+<kw name="And User has voluntary contributes of $010 per Anually" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:29.741" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:29.741" endtime="20201024 19:29:29.758"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${voluntary_contribution}</arg>
+<arg>${contribution}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:29.759" level="INFO">Typing text '010' into text field 'xpath=//div[1][contains(@model,'VoluntaryContributions')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:29:29.758" endtime="20201024 19:29:29.856"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${frequecy_for_contibution}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:29.856" level="INFO">Clicking element 'xpath=//div[contains(@class,'well-value ng-binding')]/span[contains(text(),'Frequency')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:29.856" endtime="20201024 19:29:29.979"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${frequency}' == 'fortnightly'</arg>
+<arg>Click Element</arg>
+<arg>${frequecy_for_fortnightly}</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${frequecy_for_annually}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${frequecy_for_annually}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:29.980" level="INFO">Clicking element 'xpath=//div/span[contains(text(),'Annually')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:29.980" endtime="20201024 19:29:30.167"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:29.979" endtime="20201024 19:29:30.167"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:30.167" endtime="20201024 19:29:30.184"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:29.740" endtime="20201024 19:29:30.184"></status>
+</kw>
+<kw name="And User selects risk profile as balanced" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:30.188" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:30.187" endtime="20201024 19:29:30.220"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${risk_profile}' == 'defensive'</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_defensive}</arg>
+<arg>ELSE IF</arg>
+<arg>'${risk_profile}' == 'conservative'</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_conservative}</arg>
+<arg>ELSE</arg>
+<arg>Click Element</arg>
+<arg>${risk_profile_balanced}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${risk_profile_balanced}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:30.222" level="INFO">Clicking element 'xpath=//input[contains(@Id,'radio-option-019')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:30.221" endtime="20201024 19:29:30.363"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:30.220" endtime="20201024 19:29:30.363"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:30.364" endtime="20201024 19:29:30.389"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:30.187" endtime="20201024 19:29:30.389"></status>
+</kw>
+<kw name="And User has a saving goal of $200000" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:30.391" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:30.391" endtime="20201024 19:29:30.441"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Saving_goal_at_retirement}</arg>
+<arg>${saving_amount}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:30.442" level="INFO">Typing text '200000' into text field 'xpath=//div[1][contains(@model,'SavingsGoal')]/div/div/div/input'.</msg>
+<status status="PASS" starttime="20201024 19:29:30.441" endtime="20201024 19:29:30.603"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:30.604" endtime="20201024 19:29:30.606"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:30.390" endtime="20201024 19:29:30.606"></status>
+</kw>
+<kw name="Then User clicks the retirement projection button" library="test_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>${kiwi_saver_iframe}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:30.608" level="INFO">Selecting frame 'xpath=//*[@id='calculator-embed']/iframe'.</msg>
+<status status="PASS" starttime="20201024 19:29:30.608" endtime="20201024 19:29:30.633"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${retierment_projection_button}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:30.633" endtime="20201024 19:29:30.663"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${retierment_projection_button}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:30.664" level="INFO">Clicking element 'xpath=//button/span[contains(text(),'View your KiwiSaver retirement projections')]'.</msg>
+<status status="PASS" starttime="20201024 19:29:30.664" endtime="20201024 19:29:30.788"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20201024 19:29:30.789" endtime="20201024 19:29:30.851"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:30.607" endtime="20201024 19:29:30.852"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201024 19:29:30.855" endtime="20201024 19:29:33.247"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:30.854" endtime="20201024 19:29:33.247"></status>
+</kw>
+<tags>
+<tag>codebuild_ready</tag>
+<tag>TC_kiwi_saver_004</tag>
+</tags>
+<status status="PASS" starttime="20201024 19:29:14.711" endtime="20201024 19:29:33.247" critical="yes"></status>
+</test>
+<kw name="Update Global Test Status" library="helper" type="teardown">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Variable Should Exist</arg>
+<arg>${GLOBAL_TEST_STATUS}</arg>
+</arguments>
+<assign>
+<var>${var_existing}</var>
+</assign>
+<kw name="Variable Should Exist" library="BuiltIn">
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<arguments>
+<arg>${GLOBAL_TEST_STATUS}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:33.252" level="FAIL">Variable ${GLOBAL_TEST_STATUS} does not exist.</msg>
+<status status="FAIL" starttime="20201024 19:29:33.250" endtime="20201024 19:29:33.252"></status>
+</kw>
+<msg timestamp="20201024 19:29:33.252" level="INFO">${var_existing} = False</msg>
+<status status="PASS" starttime="20201024 19:29:33.249" endtime="20201024 19:29:33.252"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments if ``condition`` is false.</doc>
+<arguments>
+<arg>${var_existing}</arg>
+<arg>Create Global Variable For Overall Test Result</arg>
+</arguments>
+<kw name="Create Global Variable For Overall Test Result" library="helper">
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${GLOBAL_TEST_STATUS}</arg>
+<arg>"success"</arg>
+</arguments>
+<msg timestamp="20201024 19:29:33.254" level="INFO">${GLOBAL_TEST_STATUS} = "success"</msg>
+<status status="PASS" starttime="20201024 19:29:33.253" endtime="20201024 19:29:33.254"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:33.253" endtime="20201024 19:29:33.254"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:33.253" endtime="20201024 19:29:33.255"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${GLOBAL_TEST_STATUS}</arg>
+</arguments>
+<assign>
+<var>${curr_global_test_status}</var>
+</assign>
+<msg timestamp="20201024 19:29:33.255" level="INFO">${curr_global_test_status} = "success"</msg>
+<status status="PASS" starttime="20201024 19:29:33.255" endtime="20201024 19:29:33.255"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${SUITE STATUS}'=='FAIL'</arg>
+<arg>"failure"</arg>
+<arg>'${SUITE STATUS}'=='PASS'</arg>
+<arg>${curr_global_test_status}</arg>
+</arguments>
+<assign>
+<var>${GLOBAL_TEST_STATUS}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${SUITE STATUS}'=='PASS'</arg>
+<arg>${curr_global_test_status}</arg>
+</arguments>
+<status status="PASS" starttime="20201024 19:29:33.255" endtime="20201024 19:29:33.256"></status>
+</kw>
+<msg timestamp="20201024 19:29:33.256" level="INFO">${GLOBAL_TEST_STATUS} = "success"</msg>
+<status status="PASS" starttime="20201024 19:29:33.255" endtime="20201024 19:29:33.256"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${GLOBAL_TEST_STATUS}</arg>
+</arguments>
+<msg timestamp="20201024 19:29:33.256" level="INFO">${GLOBAL_TEST_STATUS} = "success"</msg>
+<status status="PASS" starttime="20201024 19:29:33.256" endtime="20201024 19:29:33.256"></status>
+</kw>
+<status status="PASS" starttime="20201024 19:29:33.249" endtime="20201024 19:29:33.256"></status>
+</kw>
+<doc>Buy online journey for Yellow Products</doc>
+<status status="PASS" starttime="20201024 19:28:14.587" endtime="20201024 19:29:33.256"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0">codebuild_ready</stat>
+<stat pass="1" fail="0">TC_kiwi_saver_001</stat>
+<stat pass="1" fail="0">TC_kiwi_saver_002</stat>
+<stat pass="1" fail="0">TC_kiwi_saver_003</stat>
+<stat pass="1" fail="0">TC_kiwi_saver_004</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="Tests">Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20201024 19:28:14.970" level="ERROR">Error in file 'C:\Users\Y982410\PycharmProjects\test\testing1\test_keywords.robot': Variable file '..\site_data.py' does not exist.</msg>
+</errors>
+</robot>
