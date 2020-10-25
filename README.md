@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is automation test suite is built for Westpac Kiwisaver screen for the assignment given by Westpac, it covers all the test cases given in the email. This test suite is built using Robot Framework and Python language. This document will help you to install Robot Framework, and other relevant Selenium libraries and also the Python language to run this project. 
+This automation test suite is built for Westpac Kiwisaver screen for the assignment given by Westpac, it covers all the test cases given in the email. This test suite is built using Robot Framework and Python language. This document will help you to install Robot Framework, and other relevant Selenium libraries and also the Python language to run this project. 
 
 ## Installation
 
