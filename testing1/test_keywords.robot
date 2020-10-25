@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Buy online journey for Yellow Products keywords
+Documentation     Kiwisaver portal for westpac keywords
 Resource          ../helper.robot
 Library           ../util.py
 Library           ../config.py
