@@ -93,7 +93,7 @@ git clone https://github.com/autoak/Westpackiwisaver.git
 
 ## Running this project
 
-After cloning the repo, go to the folder and update the 'Runtest.bat'. #####Set the 'outputdir' to your local folder path where your repo is cloned
+After cloning the repo, go to the folder and update the 'Runtest.bat'. **Set the 'outputdir' to your local folder path where your repo is cloned**. This is the path where you want your output files for logs and report to be saved
 
 After updating the bat file, run the following command
 
