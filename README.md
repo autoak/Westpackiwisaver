@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hi, this is a automation framework for Westpac Kiwisaver screen. This is built using Robot Framework and Python language. This document will help you to install Robot Framework, and other relevant Selenium libraries and also the Python language to run this project. 
+This is automation test suite is built for Westpac Kiwisaver screen for the assignment given by Westpac, it covers all the test cases given in the email. This test suite is built using Robot Framework and Python language. This document will help you to install Robot Framework, and other relevant Selenium libraries and also the Python language to run this project. 
 
 ## Installation
 
@@ -39,7 +39,7 @@ pip install robotframework-selenium2library
 pip install --upgrade robotframework-selenium2library
 ```
 
-Pillow Library Installation
+Pillow Library Installation - Pillow adds image processing features to Python.
 
 ```bash
 pip install Pillow
