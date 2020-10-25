@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Buy online journey for Yellow Products
+Documentation       Kiwisaver portal for westpac test cases
 Test Setup          Open browser and maximize
 Test Teardown       run keywords
 ...                 Close Browser
