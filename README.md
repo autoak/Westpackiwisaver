@@ -4,6 +4,13 @@
 
 This automation test suite is built for Westpac Kiwisaver screen for the assignment given by Westpac, it covers all the test cases given in the email. This test suite is built using Robot Framework and Python language. This document will help you to install Robot Framework, and other relevant Selenium libraries and also the Python language to run this project. 
 
+## Information on the files in this project
+
+1. [test_sitedata.py](./testing1/test_sitedata.py) - This python file containts the variables with all the xpaths and URLs
+2. [tests.robot](./testing1/tests.robot) - This file containts all the BDD test cases for all the scenarios given in the email
+3. [test_keywords.robot](./testing1/test_keywords.robot) - This file containts defination for all steps in the test cases
+
+
 ## Installation
 
 1. First, check if your computer already has Python programming language. Open Terminal/Command Prompt and type in:
